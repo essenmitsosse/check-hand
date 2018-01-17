@@ -1,15 +1,16 @@
 const buildCardArray = require( './build-card-array' );
+const spliceCard = require( './splice-card' );
 
 const randomHand = () => {
 	const cards = [];
-	const deckSize = 52;
-	const cardArray = buildCardArray();
+	let cardArray = buildCardArray();
 
-	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
-	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
-	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
-	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
-	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
+	[ cards[ 0 ], cardArray ] = spliceCard( cardArray );
+	[ cards[ 1 ], cardArray ] = spliceCard( cardArray );
+	[ cards[ 2 ], cardArray ] = spliceCard( cardArray );
+	[ cards[ 3 ], cardArray ] = spliceCard( cardArray );
+	[ cards[ 4 ], cardArray ] = spliceCard( cardArray );
+
 	return cards;
 };
 
