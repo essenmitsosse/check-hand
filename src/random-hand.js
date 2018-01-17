@@ -1,19 +1,16 @@
-const suits = [ 'H', 'D', 'S', 'C' ];
-const values = [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ];
+const buildCardArray = require( './build-card-array' );
 
-const randomSuit = () => suits[ Math.floor( Math.random() * ( suits.length ) ) ];
-const randomValue = () => values[ Math.floor( Math.random() * ( values.length ) ) ];
-const randomCard = () => `${ randomValue() }-${ randomSuit() }`;
 const randomHand = () => {
-	const c = [];
-	c.push( randomCard() );
-	c.push( randomCard() );
-	c.push( randomCard() );
-	c.push( randomCard() );
-	c.push( randomCard() );
-	return c;
+	const cards = [];
+	const deckSize = 52;
+	const cardArray = buildCardArray();
+
+	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
+	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
+	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
+	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
+	cards.push( cardArray.splice( Math.floor( Math.random() * cardArray.length ), 1 )[ 0 ] );
+	return cards;
 };
 
-module.exports = {
-	randomSuit, randomValue, randomCard, randomHand,
-};
+module.exports = randomHand;
