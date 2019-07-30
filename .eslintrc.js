@@ -1,15 +1,15 @@
 module.exports = {
-	extends: 'airbnb',
+	extends: 'airbnb-base',
 	"env": {
 		"jest": true
 	},
 	rules:{
-		indent: [ 2, 'tab' ],
+		indent: [ 'error', 'tab' ],
 		'no-tabs': 0,
-		'space-in-parens': [ 2, 'always' ],
-		'template-curly-spacing': [ 2, 'always' ],
-		'array-bracket-spacing': [ 2, 'always' ],
-		'object-curly-spacing': [ 2, 'always' ],
-		'computed-property-spacing': [ 2, 'always' ],
+		'space-in-parens': [ 'error', 'always' ],
+		'template-curly-spacing': [ 'error', 'always' ],
+		'array-bracket-spacing': [ 'error', 'always' ],
+		'object-curly-spacing': [ 'error', 'always' ],
+		'computed-property-spacing': [ 'error', 'always' ],
 	}
 };
